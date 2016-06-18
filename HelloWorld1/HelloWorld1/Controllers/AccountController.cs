@@ -22,7 +22,8 @@ namespace HelloWorld1.Controllers
 
         public AccountController(UserManager<ApplicationUser> userManager)
         {
-            UserManager = userManager;
+            var teste = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            UserManager = teste;
         }
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
